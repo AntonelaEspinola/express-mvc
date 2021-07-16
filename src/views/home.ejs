@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<%-include('partials/head')%>
+<body>
+ <!-- header -->
+<%-include('partials/header')%>
+    <main>
+      <section>
+        <% if (typeof nombre !== 'undefined' && nombre) { %>
+         <h1>Bienvenida <%=nombre%></h1>
+        <% } else{%>
+          <h1>Usuario desconocido</h1>
+        <%}%>
+        <% for( let i = 0; i < 5; i++ ) { %>
+        <p>Estamos aprendiendo </p>
+        <% } %>
+        <ul class="alert-primary">
+          <% peliculas.forEach(pelicula => { %>
+         <li>El nombre de la pelicula es <b><%=pelicula%></b>  y es de <%=genero%></li>
+            <% }) %>
+        </ul>
+     
+      </section>
+    </main>
+    <!-- scripts -->
+<%-include('partials/scripts')%>
+</body>
+</html>
